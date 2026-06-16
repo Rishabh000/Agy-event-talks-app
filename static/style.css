@@ -22,6 +22,147 @@
     --badge-update: linear-gradient(135deg, #6b7280, #4b5563);
 }
 
+body.light-mode {
+    --bg-dark: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --border-color: rgba(15, 23, 42, 0.08);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --primary: #0284c7;
+    --primary-glow: rgba(2, 132, 199, 0.15);
+}
+
+/* Light mode overrides */
+body.light-mode {
+    background-color: var(--bg-dark);
+}
+
+body.light-mode .bg-glow {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 100%);
+}
+
+body.light-mode .brand-text h1 {
+    background: linear-gradient(135deg, #0f172a 30%, #475569);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.light-mode .search-box {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(15, 23, 42, 0.12);
+}
+
+body.light-mode .search-box input {
+    color: var(--text-primary);
+}
+
+body.light-mode .search-box input::placeholder {
+    color: #94a3b8;
+}
+
+body.light-mode .filter-tab {
+    background: rgba(15, 23, 42, 0.04);
+    border-color: rgba(15, 23, 42, 0.06);
+    color: var(--text-secondary);
+}
+
+body.light-mode .filter-tab:hover {
+    background: rgba(15, 23, 42, 0.08);
+    color: var(--text-primary);
+}
+
+body.light-mode .filter-tab.active {
+    background: rgba(2, 132, 199, 0.15);
+    border-color: rgba(2, 132, 199, 0.3);
+    color: var(--primary);
+}
+
+body.light-mode .note-body {
+    color: #334155;
+}
+
+body.light-mode .note-body a {
+    color: var(--primary);
+    border-bottom-color: rgba(2, 132, 199, 0.4);
+}
+
+body.light-mode .btn-secondary {
+    background: rgba(15, 23, 42, 0.04);
+    border-color: rgba(15, 23, 42, 0.08);
+    color: var(--text-primary);
+}
+
+body.light-mode .btn-secondary:hover {
+    background: rgba(15, 23, 42, 0.08);
+    border-color: rgba(15, 23, 42, 0.15);
+}
+
+body.light-mode .note-actions {
+    border-top-color: rgba(15, 23, 42, 0.06);
+}
+
+body.light-mode .modal-overlay {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+body.light-mode .modal-container {
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.1);
+    color: #0f172a;
+}
+
+body.light-mode .modal-header {
+    border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .selected-note-preview {
+    background: rgba(15, 23, 42, 0.02);
+    border-color: rgba(15, 23, 42, 0.05);
+}
+
+body.light-mode .preview-text {
+    color: #475569;
+}
+
+body.light-mode .tweet-editor-area label {
+    color: #475569;
+}
+
+body.light-mode .tweet-editor-area textarea {
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.1);
+    color: #0f172a;
+}
+
+body.light-mode .tweet-editor-area textarea:focus {
+    border-color: #1d9bf0;
+}
+
+body.light-mode .hashtag-chip {
+    background: rgba(29, 155, 240, 0.05);
+    border-color: rgba(29, 155, 240, 0.1);
+}
+
+body.light-mode .hashtag-chip:hover {
+    background: rgba(29, 155, 240, 0.1);
+}
+
+body.light-mode .hashtag-chip.active {
+    background: #1d9bf0;
+    color: #fff;
+}
+
+body.light-mode .tweet-footer {
+    border-top-color: rgba(15, 23, 42, 0.08);
+}
+
+/* Theme Toggle display rules */
+#sun-icon { display: block; }
+#moon-icon { display: none; }
+
+body.light-mode #sun-icon { display: none; }
+body.light-mode #moon-icon { display: block; }
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-primary);

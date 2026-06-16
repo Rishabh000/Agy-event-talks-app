@@ -10,6 +10,7 @@ const feedGrid = document.getElementById('feed-grid');
 const refreshBtn = document.getElementById('refresh-btn');
 const refreshIcon = document.getElementById('refresh-icon');
 const exportCsvBtn = document.getElementById('export-csv-btn');
+const themeToggleBtn = document.getElementById('theme-toggle');
 const searchInput = document.getElementById('search-input');
 const filterTabs = document.getElementById('filter-tabs');
 const updateCount = document.getElementById('update-count');
@@ -34,6 +35,12 @@ const ringCircumference = 2 * Math.PI * ringRadius;
 if (counterRing) {
     counterRing.style.strokeDasharray = `${ringCircumference} ${ringCircumference}`;
     counterRing.style.strokeDashoffset = ringCircumference;
+}
+
+// Initialize Theme Mode
+const savedTheme = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
 }
 
 // Fetch Updates from Flask API
@@ -374,6 +381,15 @@ document.addEventListener('keydown', (e) => {
 // CSV Export Listener
 if (exportCsvBtn) {
     exportCsvBtn.addEventListener('click', exportToCSV);
+}
+
+// Theme Toggle Listener
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const theme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', theme);
+    });
 }
 
 // Initial Fetch on Load
